@@ -1,0 +1,24 @@
+﻿@model Laundry.Models.DetailPelayanan
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Detail</h2>
+
+<div>
+    <h4>Data Pelayanan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPesanan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPesanan)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdKaryawan">Edit</a> |
+    <a asp-action="Index">Kembali ke Daftar Detail Pelayanan</a>
+</div>

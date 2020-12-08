@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Laundry.Models.DetailPelayanan>
+
+@{
+    ViewData["Title"] = "Detail Pelayanan";
+}
+
+<h2>Detail Pelayanan</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("ID Karyawan")
+            </th>
+            <th>
+                @Html.DisplayName("ID Pesanan")
+            </th>
+            <th></th>i
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayName("101")
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPesanan)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdKaryawan">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdKaryawan">Detail</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdKaryawan">Hapus</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

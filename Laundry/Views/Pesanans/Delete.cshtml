@@ -1,0 +1,57 @@
+﻿@model Laundry.Models.Pesanan
+
+@{
+    ViewData["Title"] = "Hapus";
+}
+
+<h2>Hapus</h2>
+
+<h3>Apakah anda yakin ingin menghapus data ini?</h3>
+<div>
+    <h4>Pesanan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaCustomer)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NamaCustomer)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Tipe)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Tipe)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BeratTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BeratTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HrgSatuan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HrgSatuan)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.HrgTotal)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.HrgTotal)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.TglPesanan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TglPesanan)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdPesanan" />
+        <input type="submit" value="Hapus" class="btn btn-default" /> |
+        <a asp-action="Index">Kembali ke Daftar Pesanan</a>
+    </form>
+</div>

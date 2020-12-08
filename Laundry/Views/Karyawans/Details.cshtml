@@ -1,0 +1,36 @@
+﻿@model Laundry.Models.Karyawan
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h2>Detail Data</h2>
+
+<div>
+    <h4>Karyawan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NamaKaryawan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.NamaKaryawan)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.JnsKelamin)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.JnsKelamin)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Alamat)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Alamat)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdKaryawan">Edit</a> |
+    <a asp-action="Index">Kembali ke Daftar Karyawan</a>
+</div>

@@ -1,0 +1,58 @@
+﻿@model Laundry.Models.Pesanan
+
+@{
+    ViewData["Title"] = "Tambah";
+}
+
+<h2>Tambah Data</h2>
+
+<h4>Pesanan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NamaCustomer" class="control-label"></label>
+                <input asp-for="NamaCustomer" class="form-control" />
+                <span asp-validation-for="NamaCustomer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tipe" class="control-label"></label>
+                <input asp-for="Tipe" class="form-control" />
+                <span asp-validation-for="Tipe" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="BeratTotal" class="control-label"></label>
+                <input asp-for="BeratTotal" class="form-control" />
+                <span asp-validation-for="BeratTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HrgSatuan" class="control-label"></label>
+                <input asp-for="HrgSatuan" class="form-control" />
+                <span asp-validation-for="HrgSatuan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="HrgTotal" class="control-label"></label>
+                <input asp-for="HrgTotal" class="form-control" />
+                <span asp-validation-for="HrgTotal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TglPesanan" class="control-label"></label>
+                <input asp-for="TglPesanan" class="form-control" />
+                <span asp-validation-for="TglPesanan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Tambah" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Kembali ke Daftar Pesanan</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

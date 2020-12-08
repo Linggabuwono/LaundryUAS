@@ -1,0 +1,38 @@
+﻿@model Laundry.Models.DetailPelayanan
+
+@{
+    ViewData["Title"] = "Tambah";
+}
+
+<h2>Tambah Data</h2>
+
+<h4>Detail Pelayanan</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdKaryawan" class="control-label"></label>
+                <input asp-for="IdKaryawan" class="form-control" />
+                <span asp-validation-for="IdKaryawan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdPesanan" class="control-label"></label>
+                <input asp-for="IdPesanan" class="form-control" />
+                <span asp-validation-for="IdPesanan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Tambah" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Kembali ke Daftar Detail Pelayanan</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

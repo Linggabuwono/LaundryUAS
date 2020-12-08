@@ -1,0 +1,27 @@
+﻿@model Laundry.Models.DetailPelayanan
+
+@{
+    ViewData["Title"] = "Hapus";
+}
+
+<h2>Hapus</h2>
+
+<h3>Apakah anda yakin ingin menghapus data ini?</h3>
+<div>
+    <h4>Detail Pelayanan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IdPesanan)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IdPesanan)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdKaryawan" />
+        <input type="submit" value="Hapus" class="btn btn-default" /> |
+        <a asp-action="Index">Kembali ke Daftar Detail Pelayanan</a>
+    </form>
+</div>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Laundry.Models.Bos>
+
+@{
+    ViewData["Title"] = "Bos";
+}
+
+<h2>Data Bos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayName("ID Bos")
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                <a asp-action="Karyawans">Atur Data Karyawan</a>
+            </td>
+            <td>
+                <a asp-action="DetailPelayanans">Lihat Detail Pelayanan</a>
+            </td>
+            <td>
+                <a asp-action="Pesanans">Atur Data Pesanan</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
