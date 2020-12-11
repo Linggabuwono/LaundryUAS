@@ -21,14 +21,14 @@ namespace Laundry.Controllers
         // GET: Pesanans
         public async Task<IActionResult> Index(string ktsd, string searchString, string currentFilter, int? pageNumber, string sortOrder)
         {
-            var menu = from m in _context.Pesanan.Include(k => k.IdPesanan).Include(p => p.NamaCustomer).Include(p => p.Tipe).Include(p => p.BeratTotal).Include(p => p.HrgSatuan).Include(p => p.HrgTotal).Include(p => p.TglPesanan) select m;
+            var menu = from m in _context.Pesanan select m;
 
             //untuk search data
             if (!string.IsNullOrEmpty(searchString))
             {
                 menu = menu.Where(s => s.IdPesanan.ToString().Contains(searchString) || s.NamaCustomer.Contains(searchString) || s.Tipe.Contains(searchString) || s.BeratTotal.ToString().Contains(searchString) || s.HrgSatuan.ToString().Contains(searchString) || s.HrgTotal.ToString().Contains(searchString) || s.TglPesanan.ToString().Contains(searchString));
             }
-            return View(await _context.Pesanan.ToListAsync());
+            return View(await menu.ToListAsync());
         }
 
         // GET: Pesanans/Details/5
